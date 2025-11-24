@@ -2,18 +2,18 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "prayagjain2@gmail.com",
-                "Name": "Prayag Jain"
+                "Email": "gibreel.khan@gmail.com",
+                "Name": "Gibreel Abdullah"
             }
         ],
         "Category": "Date and Time",
-        "Description": "A modern looking clock widget for your Desktop!",
+        "Description": "A modern looking hijri clock widget for your Desktop!",
         "Icon": "clock",
-        "Id": "com.github.prayag2.modernclock",
+        "Id": "com.github.gibreel.modernhijriclock",
         "License": "GPLv3",
-        "Name": "Modern Clock",
+        "Name": "Modern Hijri Clock",
         "Version": "1.0.0",
-        "Website": "https://github.com/prayag2/kde_modernclock"
+        "Website": "https://github.com/GibreelAbdullah/kde_hijri_modernclock"
         
     },
     "X-Plasma-API-Minimum-Version": "6.0",

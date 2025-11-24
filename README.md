@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="https://github.com/Prayag2/kde_modernclock/blob/main/assets/logo.jpg" width=100/>
-  <h2 align="center">Modern Clock for KDE</h2>
-  <p align="center">A modern looking clock widget!</center>
+  <img src="https://github.com/GibreelAbdullah/kde_hijri_modernclock/blob/main/assets/logo.jpg" width=100/>
+  <h2 align="center">Modern Clock for KDE With Hijri</h2>
+  <p align="center">A modern looking clock widget with Hijri Date!</center>
 </p>
 
 <p align="center">
-<a href="https://github.com/prayag2/kde_modernclock/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_modernclock/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
-<a href="https://github.com/prayag2/kde_modernclock/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/prayag2/kde_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/GibreelAbdullah/kde_hijri_modernclock/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/GibreelAbdullah/kde_hijri_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/GibreelAbdullah/kde_hijri_modernclock/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/GibreelAbdullah/kde_hijri_modernclock?color=%233DAEE9&style=for-the-badge"></a>
+<a href="https://github.com/GibreelAbdullah/kde_hijri_modernclock/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/GibreelAbdullah/kde_hijri_modernclock?color=%233DAEE9&style=for-the-badge"></a>
 </p>
 
 <p align="center">
-  <img src="https://github.com/Prayag2/kde_modernclock/blob/main/assets/ss.png"/>
+  <img src="https://github.com/GibreelAbdullah/kde_hijri_modernclock/blob/main/assets/ss.png"/>
 </p>
 
 ## Installation
@@ -25,6 +25,6 @@
 
 #### From this repository
 1. Clone this repository  
-`git clone https://github.com/prayag2/kde_modernclock && cd kde_modernclock/`  
+`git clone https://github.com/GibreelAbdullah/kde_hijri_modernclock && cd kde_hijri_modernclock/`  
 2. Install using the script  
 `kpackagetool5 -i package`

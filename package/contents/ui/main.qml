@@ -1,10 +1,13 @@
 import QtQml 2.15
 import QtQuick 2.0
+import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.0
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasma5support as Plasma5Support
+import "hijri.js" as HijriConverter
+
 
 PlasmoidItem {
     id: root
@@ -45,16 +48,22 @@ PlasmoidItem {
             property bool use24HourFormat: plasmoid.configuration.use_24_hour_format
             property string timeCharacter: plasmoid.configuration.time_character
             property string dateFormat: plasmoid.configuration.date_format
-            
+            property bool useArabic: plasmoid.configuration.use_arabic
+
             onUse24HourFormatChanged: dataChanged()
             onTimeCharacterChanged: dataChanged()
             onDateFormatChanged: dataChanged()
-
+            onUseArabicChanged: dataChanged()
+            
             onDataChanged: {
                 var time_format = use24HourFormat ? "hh:mm" : "hh:mm AP"
                 var curDate = dataSource.data["Local"]["DateTime"]
+
+                var hijriDateString = HijriConverter.getHijriDateString(curDate, useArabic)
+
                 display_day.text = Qt.formatDate(curDate, "dddd").toUpperCase()
                 display_date.text = Qt.formatDate(curDate, dateFormat).toUpperCase()
+                display_date_hijri.text = hijriDateString
                 display_time.text = timeCharacter + " " + Qt.formatTime(curDate, time_format) + " " + timeCharacter
             }
 
@@ -64,7 +73,8 @@ PlasmoidItem {
         // Main Content
         Column {
             id: container
-
+            // ... (rest of the QML column remains unchanged)
+            
             // Column settings
             anchors.centerIn: parent
             spacing: 5
@@ -85,14 +95,9 @@ PlasmoidItem {
                 horizontalAlignment: Text.AlignHCenter 
             }
 
-            // The Date
             PlasmaComponents.Label {
                 id: display_date
-
-                // visibility
                 visible: plasmoid.configuration.show_date
-
-                // font settings
                 font.pixelSize: plasmoid.configuration.date_font_size
                 font.letterSpacing: plasmoid.configuration.date_letter_spacing
                 font.family: font_poppins.name
@@ -101,14 +106,21 @@ PlasmoidItem {
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
+            PlasmaComponents.Label {
+                id: display_date_hijri
+                visible: plasmoid.configuration.show_date_hijri
+                font.pixelSize: plasmoid.configuration.date_hijri_font_size
+                font.family: font_poppins.name
+                color: plasmoid.configuration.date_hijri_font_color
+                horizontalAlignment: Text.AlignHCenter
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
             // The Time
             PlasmaComponents.Label {
                 id: display_time
 
-                // visibility
                 visible: plasmoid.configuration.show_time
-
-                // font settings
                 font.pixelSize: plasmoid.configuration.time_font_size
                 font.family: font_poppins.name
                 color: plasmoid.configuration.time_font_color

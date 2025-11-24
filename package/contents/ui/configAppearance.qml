@@ -10,6 +10,10 @@ Kirigami.ScrollablePage {
     // properties
     property alias cfg_show_day: showDay.checked
     property alias cfg_show_date: showDate.checked
+    property alias cfg_show_date_hijri: showDateHijri.checked
+    property alias cfg_use_arabic: useArabic.checked
+    property alias cfg_date_hijri_font_size: dateHijriFontSize.value
+    property alias cfg_date_hijri_font_color: dateHijriFontColor.color
     property alias cfg_show_time: showTime.checked
     property alias cfg_day_font_size: dayFontSize.value
     property alias cfg_date_font_size: dateFontSize.value
@@ -59,6 +63,7 @@ Kirigami.ScrollablePage {
                 id: showDate
             }
         }
+
         NumberField {
             id: dateFontSize
             label: i18n("Font Size")
@@ -78,6 +83,38 @@ Kirigami.ScrollablePage {
         ColorDial {
             id: dateFontColor
             color: cfg_date_font_color
+        }
+
+        Title {
+            title: i18n("Hijri Date")
+        }
+
+        RowLayout {
+            Label {
+                text: i18n("Show Hijri Date")
+            }
+            CheckBox {
+                id: showDateHijri
+            }
+        }
+
+        RowLayout {
+            Label {
+                text: i18n("Use Arabic")
+            }
+            CheckBox {
+                id: useArabic
+            }
+        }
+
+        NumberField {
+            id: dateHijriFontSize
+            label: i18n("Font Size")
+        }
+
+        ColorDial {
+            id: dateHijriFontColor
+            color: cfg_date_hijri_font_color
         }
 
         Title {
