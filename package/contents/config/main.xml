@@ -63,5 +63,8 @@
         <entry name="time_character" type="String">
             <default>-</default>
         </entry>
+        <entry name="hijri_offset" type="Int">
+            <default>0</default>
+        </entry>
     </group>
 </kcfg> 

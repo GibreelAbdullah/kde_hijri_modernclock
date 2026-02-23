@@ -27,6 +27,7 @@ Kirigami.ScrollablePage {
     property alias cfg_time_character: timeCharacter.text
     property alias cfg_date_format: dateFormat.text
     property alias cfg_date_font_color: dateFontColor.color
+    property alias cfg_hijri_offset: hijriOffset.value
 
     Kirigami.FormLayout {
         Title {
@@ -115,6 +116,13 @@ Kirigami.ScrollablePage {
         ColorDial {
             id: dateHijriFontColor
             color: cfg_date_hijri_font_color
+        }
+
+        NumberField {
+            id: hijriOffset
+            label: i18n("Hijri Adjustment (days)")
+            from: -5
+            to: 5
         }
 
         Title {
