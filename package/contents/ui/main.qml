@@ -49,17 +49,19 @@ PlasmoidItem {
             property string timeCharacter: plasmoid.configuration.time_character
             property string dateFormat: plasmoid.configuration.date_format
             property bool useArabic: plasmoid.configuration.use_arabic
+            property int hijriOffset: plasmoid.configuration.hijri_offset
 
             onUse24HourFormatChanged: dataChanged()
             onTimeCharacterChanged: dataChanged()
             onDateFormatChanged: dataChanged()
             onUseArabicChanged: dataChanged()
+            onHijriOffsetChanged: dataChanged()
             
             onDataChanged: {
                 var time_format = use24HourFormat ? "hh:mm" : "hh:mm AP"
                 var curDate = dataSource.data["Local"]["DateTime"]
 
-                var hijriDateString = HijriConverter.getHijriDateString(curDate, useArabic)
+                var hijriDateString = HijriConverter.getHijriDateString(curDate, useArabic, hijriOffset)
 
                 display_day.text = Qt.formatDate(curDate, "dddd").toUpperCase()
                 display_date.text = Qt.formatDate(curDate, dateFormat).toUpperCase()
